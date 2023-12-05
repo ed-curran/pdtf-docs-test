@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight';
 import react from "@astrojs/react";
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import requireTransform from 'vite-plugin-require-transform';
+import { esbuildCommonjs } from '@originjs/vite-plugin-commonjs'
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,17 +23,22 @@ export default defineConfig({
     plugins: [
       nodePolyfills({
         // To add only specific polyfills, add them here. If no option is passed, adds all polyfills
-        include: ['path', 'process', 'Buffer', 'require'],
+        include: ['path', 'process', 'Buffer'],
         // Whether to polyfill specific globals.
         globals: {
           Buffer: true, // can also be 'build', 'dev', or false
           global: true,
           process: true,
-          require: true,
         },
-      }),
-      requireTransform()
+      })
     ],
+    optimizeDeps:{
+      esbuildOptions:{
+        plugins:[
+          esbuildCommonjs(['react-calendar','react-date-picker'])
+        ]
+      }
+    }
   },
   integrations: [starlight({
     title: 'My Docs',
