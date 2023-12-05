@@ -38,9 +38,6 @@ dependencies:
   d:
     specifier: ^1.0.1
     version: 1.0.1
-  prismjs:
-    specifier: ^1.29.0
-    version: 1.29.0
   react:
     specifier: ^18.0.0
     version: 18.2.0
@@ -56,9 +53,6 @@ dependencies:
   vite-plugin-node-polyfills:
     specifier: ^0.17.0
     version: 0.17.0(vite@4.5.1)
-  vite-plugin-prismjs:
-    specifier: ^0.0.8
-    version: 0.0.8(prismjs@1.29.0)
   vite-plugin-require-transform:
     specifier: ^1.0.21
     version: 1.0.21
@@ -2293,14 +2287,6 @@ packages:
 
   /b4a@1.6.4:
     resolution: {integrity: sha512-fpWrvyVHEKyeEvbKZTVOeZF3VSKKWtJxFIxX/jaVPf+cLbGUSitjb49pHLqPV2BUNNZ0LcoeEGfE/YCpyDYHIw==}
-    dev: false
-
-  /babel-plugin-prismjs@2.1.0(prismjs@1.29.0):
-    resolution: {integrity: sha512-ehzSKYfeAz4U78zi/sfwsjDPlq0LvDKxNefcZTJ/iKBu+plsHsLqZhUeGf1+82LAcA35UZGbU6ksEx2Utphc/g==}
-    peerDependencies:
-      prismjs: ^1.18.0
-    dependencies:
-      prismjs: 1.29.0
     dev: false
 
   /bail@1.0.5:
@@ -7477,17 +7463,6 @@ packages:
       vite: 4.5.1
     transitivePeerDependencies:
       - rollup
-    dev: false
-
-  /vite-plugin-prismjs@0.0.8(prismjs@1.29.0):
-    resolution: {integrity: sha512-mBPPMS/hwVUArdqCtp/oajZT7iq1qwJDDCciNZ3R5+Q5tQUuUHXtDKuZHYnklPLElNbENf2FyuOtC4FrgxQRAA==}
-    engines: {node: '>=12.0.0'}
-    dependencies:
-      '@babel/core': 7.23.5
-      babel-plugin-prismjs: 2.1.0(prismjs@1.29.0)
-    transitivePeerDependencies:
-      - prismjs
-      - supports-color
     dev: false
 
   /vite-plugin-require-transform@1.0.21:

@@ -12,7 +12,7 @@ export default defineConfig({
   vite: {
     assetsInclude: ["**/*.yaml"],
     ssr: {
-      noExternal: ['prismjs'],
+      noExternal: ['prismjs', '@astrojs/prism'],
     },
     // module: {
     //   rules: [
