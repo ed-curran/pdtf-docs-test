@@ -44,7 +44,8 @@ export default defineConfig({
       include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core", "prismjs"],
       esbuildOptions:{
         plugins:[
-          esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core", "prismjs"])
+          esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core", "prismjs"]),
+          prismjsPlugin()
         ]
       }
     }
