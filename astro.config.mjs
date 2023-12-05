@@ -35,7 +35,7 @@ export default defineConfig({
     optimizeDeps:{
       esbuildOptions:{
         plugins:[
-          esbuildCommonjs(['react-calendar','react-date-picker'])
+          esbuildCommonjs(['@stoplight/json-schema-viewer'])
         ]
       }
     }
