@@ -39,13 +39,12 @@ export default defineConfig({
       }
     },
     optimizeDeps:{
-      // include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core"],
-      // exclude: [],
-      // esbuildOptions:{
-      //   plugins:[
-      //     esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core"])
-      //   ]
-      // }
+      include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core"],
+      esbuildOptions:{
+        plugins:[
+          esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core"])
+        ]
+      }
     }
   },
   integrations: [starlight({
