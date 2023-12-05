@@ -11,6 +11,9 @@ import {prismjsPlugin} from 'vite-plugin-prismjs'
 export default defineConfig({
   vite: {
     assetsInclude: ["**/*.yaml"],
+    ssr: {
+      noExternal: ['prismjs'],
+    },
     // module: {
     //   rules: [
     //     {
@@ -31,8 +34,7 @@ export default defineConfig({
           global: true,
           process: true,
         },
-      }),
-      prismjsPlugin()
+      })
     ],
 
     build: {
