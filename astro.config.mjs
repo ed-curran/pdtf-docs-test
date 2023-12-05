@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 
 import react from "@astrojs/react";
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import requireTransform from 'vite-plugin-require-transform';
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,6 +31,7 @@ export default defineConfig({
           require: true,
         },
       }),
+      requireTransform()
     ],
   },
   integrations: [starlight({
