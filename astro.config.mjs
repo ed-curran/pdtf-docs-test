@@ -21,12 +21,13 @@ export default defineConfig({
     plugins: [
       nodePolyfills({
         // To add only specific polyfills, add them here. If no option is passed, adds all polyfills
-        include: ['path', 'process', 'Buffer'],
+        include: ['path', 'process', 'Buffer', 'require'],
         // Whether to polyfill specific globals.
         globals: {
           Buffer: true, // can also be 'build', 'dev', or false
           global: true,
           process: true,
+          require: true,
         },
       }),
     ],
