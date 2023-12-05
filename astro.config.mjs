@@ -36,7 +36,7 @@ export default defineConfig({
     optimizeDeps:{
       esbuildOptions:{
         plugins:[
-          esbuildCommonjs()
+          esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core"])
         ]
       }
     }
