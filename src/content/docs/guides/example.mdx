@@ -7,14 +7,13 @@ Guides lead a user through a specific task they want to accomplish, often with a
 Writing a good guide requires thinking about what your users are trying to do.
 
 
-import {PdtfTryIt} from "../../../components/api.jsx";
+import {PdtfTryIt, PdtfJsonSchemaViewer} from "../../../components/api.jsx";
 
 here is a json schema
 
-import { JsonSchemaViewer } from "@stoplight/json-schema-viewer";
 import * as userSchema from "/public/userSchema.json"
 
-<JsonSchemaViewer client:only
+<PdtfJsonSchemaViewer client:only
     name="User Schema"
     schema={userSchema}
     expanded={false}
@@ -25,7 +24,7 @@ import * as userSchema from "/public/userSchema.json"
 
 here is an interactive api call
 <br/>
-<PdtfTryIt client:only/>
+<PdtfTryIt client:load/>
 
 ## Further reading
 

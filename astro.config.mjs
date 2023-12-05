@@ -8,9 +8,9 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 export default defineConfig({
   vite: {
     assetsInclude: ["**/*.yaml"],
-    ssr: {
-      noExternal: ['prismjs', '@astrojs/prism'],
-    },
+    // ssr: {
+    //   noExternal: ['prismjs', '@astrojs/prism'],
+    // },
     // module: {
     //   rules: [
     //     {
@@ -34,11 +34,11 @@ export default defineConfig({
       })
     ],
 
-    build: {
-      commonjsOptions: {
-        transformMixedEsModules: true
-      }
-    },
+    // build: {
+    //   commonjsOptions: {
+    //     transformMixedEsModules: true
+    //   }
+    // },
     // optimizeDeps:{
     //   include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core", "prismjs"],
     //   esbuildOptions:{

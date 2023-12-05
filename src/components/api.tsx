@@ -1,6 +1,8 @@
 import { API } from '@stoplight/elements';
 import {TryIt, TryItWithRequestSamples} from '@stoplight/elements-core';
 import '@stoplight/elements/styles.min.css';
+import {JsonSchemaViewer} from '@stoplight/json-schema-viewer'
+import Prism from 'prismjs'
 
 export function PdtfApi({ layout = 'sidebar', currentVersion = 'v1' }) {
 
@@ -22,6 +24,14 @@ export function PdtfTryIt({ layout = 'sidebar', currentVersion = 'v1' }) {
           responses: [{}]
        }}/>
     );
+}
+
+export function PdtfJsonSchemaViewer(props: any) {
+  globalThis.Prism = Prism
+  return (
+    <JsonSchemaViewer {...props}
+    />
+  )
 }
 
 // export default function Home() {
