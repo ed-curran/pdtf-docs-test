@@ -21,6 +21,7 @@ export default defineConfig({
       ],
     },
     plugins: [
+      esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core"]),
       nodePolyfills({
         // To add only specific polyfills, add them here. If no option is passed, adds all polyfills
         include: ['path', 'process', 'Buffer'],
@@ -34,6 +35,7 @@ export default defineConfig({
     ],
 
     optimizeDeps:{
+      include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core"],
       esbuildOptions:{
         plugins:[
           esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core"])
