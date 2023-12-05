@@ -36,19 +36,19 @@ export default defineConfig({
     ],
 
     build: {
-      commonjsOptions: {
-        transformMixedEsModules: true
-      }
+      // commonjsOptions: {
+      //   transformMixedEsModules: true
+      // }
     },
-    optimizeDeps:{
-      include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core", "prismjs"],
-      esbuildOptions:{
-        plugins:[
-          esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core", "prismjs"]),
-          prismjsPlugin()
-        ]
-      }
-    }
+    // optimizeDeps:{
+    //   include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core", "prismjs"],
+    //   esbuildOptions:{
+    //     plugins:[
+    //       esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core", "prismjs"]),
+    //       prismjsPlugin()
+    //     ]
+    //   }
+    // }
   },
   integrations: [starlight({
     title: 'My Docs',
