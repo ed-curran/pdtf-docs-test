@@ -21,7 +21,6 @@ export default defineConfig({
       ],
     },
     plugins: [
-      esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core"]),
       nodePolyfills({
         // To add only specific polyfills, add them here. If no option is passed, adds all polyfills
         include: ['path', 'process', 'Buffer'],
