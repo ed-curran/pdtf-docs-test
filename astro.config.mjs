@@ -36,7 +36,7 @@ export default defineConfig({
     optimizeDeps:{
       esbuildOptions:{
         plugins:[
-          esbuildCommonjs(['json-schema-viewer'])
+          esbuildCommonjs()
         ]
       }
     }
