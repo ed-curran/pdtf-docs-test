@@ -39,10 +39,10 @@ export default defineConfig({
       }
     },
     optimizeDeps:{
-      include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core", "prism"],
+      include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core", "prismjs"],
       esbuildOptions:{
         plugins:[
-          esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core", "prism"])
+          esbuildCommonjs(['@stoplight/json-schema-viewer', "@stoplight/elements", "@stoplight/elements-core", "prismjs"])
         ]
       }
     }
