@@ -11,16 +11,16 @@ import {prismjsPlugin} from 'vite-plugin-prismjs'
 export default defineConfig({
   vite: {
     assetsInclude: ["**/*.yaml"],
-    module: {
-      rules: [
-        {
-          test: /\.m?js/,
-          resolve: {
-            fullySpecified: false,
-          },
-        },
-      ],
-    },
+    // module: {
+    //   rules: [
+    //     {
+    //       test: /\.m?js/,
+    //       resolve: {
+    //         fullySpecified: false,
+    //       },
+    //     },
+    //   ],
+    // },
     plugins: [
       nodePolyfills({
         // To add only specific polyfills, add them here. If no option is passed, adds all polyfills
@@ -36,9 +36,9 @@ export default defineConfig({
     ],
 
     build: {
-      // commonjsOptions: {
-      //   transformMixedEsModules: true
-      // }
+      commonjsOptions: {
+        transformMixedEsModules: true
+      }
     },
     // optimizeDeps:{
     //   include: ["@stoplight/json-schema-viewer", "@stoplight/elements",  "@stoplight/elements-core", "prismjs"],
