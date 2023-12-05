@@ -3,9 +3,6 @@ import starlight from '@astrojs/starlight';
 
 import react from "@astrojs/react";
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
-import requireTransform from 'vite-plugin-require-transform';
-import { esbuildCommonjs } from '@originjs/vite-plugin-commonjs'
-import {prismjsPlugin} from 'vite-plugin-prismjs'
 
 // https://astro.build/config
 export default defineConfig({
