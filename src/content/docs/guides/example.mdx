@@ -6,14 +6,17 @@ description: A guide in my new Starlight docs site.
 Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.
 Writing a good guide requires thinking about what your users are trying to do.
 
+import {PdtfTryIt} from "../../../components/api.jsx";
+import {JsonSchemaViewer} from "@stoplight/json-schema-viewer";
 
-import {PdtfTryIt, PdtfJsonSchemaViewer} from "../../../components/api.jsx";
 
-here is a json schema
 
 import * as userSchema from "/public/userSchema.json"
 
-<PdtfJsonSchemaViewer client:only="react"
+here is a json schemagit
+
+[//]: # (todo figure out how to render this on server)
+<JsonSchemaViewer client:only
     name="User Schema"
     schema={userSchema}
     expanded={false}

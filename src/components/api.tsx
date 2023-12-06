@@ -4,7 +4,7 @@ import * as PrismObject from 'prismjs'
 //vite seems to have a hard time with Prism
 //globalThis.Prism = PrismObject
 import { API } from '@stoplight/elements';
-import {TryIt, TryItWithRequestSamples} from '@stoplight/elements-core';
+import {TryIt} from '@stoplight/elements-core';
 import '@stoplight/elements/styles.min.css';
 import {JsonSchemaViewer} from '@stoplight/json-schema-viewer'
 
@@ -34,13 +34,12 @@ export function PdtfTryIt({ layout = 'sidebar', currentVersion = 'v1' }) {
 //i despise it when libraries don't export their prop types
 type JsonViewerProps = React.ComponentProps<typeof JsonSchemaViewer>
 
-export function PdtfJsonSchemaViewer(props: any) {
-  console.log({Prism})
-  return (
-    <JsonSchemaViewer {...props}
-    />
-  )
-}
+// export function PdtfJsonSchemaViewer(props: JsonViewerProps) {
+//   return (
+//     <JsonSchemaViewer {...props}
+//     />
+//   )
+// }
 
 // export default function Home() {
 //     const router = useHistory();
