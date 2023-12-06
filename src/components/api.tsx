@@ -1,4 +1,6 @@
 import { API } from '@stoplight/elements';
+import * as PrismObject from 'prismjs'
+globalThis.Prism = PrismObject
 import {TryIt, withMosaicProvider, withStyles,  withRouter,
   withPersistenceBoundary,
   withQueryClientProvider,} from '@stoplight/elements-core';
