@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 
 import react from "@astrojs/react";
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import prismjsPlugin from 'vite-plugin-prismjs'
 
 // https://astro.build/config
 export default defineConfig({
@@ -34,7 +35,8 @@ export default defineConfig({
           global: true,
           process: true,
         },
-      })
+      }),
+      prismjsPlugin({languages: "all"}) //todo narrow this down
     ],
 
     build: {

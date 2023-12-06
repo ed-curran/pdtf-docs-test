@@ -3,7 +3,6 @@ import * as PrismObject from 'prismjs'
 //now you're probably looking at this like wtf but trust me if you remove it everything WILL break
 //vite seems to have a hard time with Prism
 //globalThis.Prism = PrismObject
-
 import { API } from '@stoplight/elements';
 import {TryIt, TryItWithRequestSamples} from '@stoplight/elements-core';
 import '@stoplight/elements/styles.min.css';
