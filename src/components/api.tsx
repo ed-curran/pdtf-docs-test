@@ -5,7 +5,10 @@ import {JsonSchemaViewer} from '@stoplight/json-schema-viewer'
 import * as PrismObject from 'prismjs'
 
 export function PdtfApi({ layout = 'sidebar', currentVersion = 'v1' }) {
-
+  console.log({globalThis})
+  console.log(PrismObject)
+  globalThis.Prism = PrismObject
+  console.log(Prism)
    return  (
         <API
             apiDescriptionUrl="/pdtf-api-1.2.0.yaml" //this works because this file is is in our public dir. importing directly is awkward cus this component runs client side only
