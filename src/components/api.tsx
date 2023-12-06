@@ -1,6 +1,9 @@
 import * as PrismObject from 'prismjs'
-globalThis.Prism = PrismObject
-console.log({Prism})
+
+//now you're probably looking at this like wtf but trust me if you remove it everything WILL break
+//vite seems to have a hard time with Prism
+//globalThis.Prism = PrismObject
+
 import { API } from '@stoplight/elements';
 import {TryIt, TryItWithRequestSamples} from '@stoplight/elements-core';
 import '@stoplight/elements/styles.min.css';
@@ -8,7 +11,6 @@ import {JsonSchemaViewer} from '@stoplight/json-schema-viewer'
 
 
 export function PdtfApi({ layout = 'sidebar', currentVersion = 'v1' }) {
-  console.log({Prism})
    return  (
         <API
             apiDescriptionUrl="/pdtf-api-1.2.0.yaml" //this works because this file is is in our public dir. importing directly is awkward cus this component runs client side only
@@ -29,9 +31,11 @@ export function PdtfTryIt({ layout = 'sidebar', currentVersion = 'v1' }) {
     );
 }
 
+//i despise it when libraries don't export their prop types
+type JsonViewerProps = React.ComponentProps<typeof JsonSchemaViewer>
+
 export function PdtfJsonSchemaViewer(props: any) {
   console.log({Prism})
-
   return (
     <JsonSchemaViewer {...props}
     />

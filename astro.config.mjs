@@ -6,6 +6,9 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
 // https://astro.build/config
 export default defineConfig({
+  markdown: {
+    syntaxHighlight: 'prism'
+  },
   vite: {
     assetsInclude: ["**/*.yaml"],
     // ssr: {
