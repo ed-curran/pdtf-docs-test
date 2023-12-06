@@ -1,10 +1,7 @@
-import * as PrismObject from 'prismjs'
-
-//now you're probably looking at this like wtf but trust me if you remove it everything WILL break
-//vite seems to have a hard time with Prism
-//globalThis.Prism = PrismObject
 import { API } from '@stoplight/elements';
-import {TryIt} from '@stoplight/elements-core';
+import {TryIt, withMosaicProvider, withStyles,  withRouter,
+  withPersistenceBoundary,
+  withQueryClientProvider,} from '@stoplight/elements-core';
 import '@stoplight/elements/styles.min.css';
 import {JsonSchemaViewer} from '@stoplight/json-schema-viewer'
 
@@ -15,19 +12,25 @@ export function PdtfApi({ layout = 'sidebar', currentVersion = 'v1' }) {
             apiDescriptionUrl="/pdtf-api-1.2.0.yaml" //this works because this file is is in our public dir. importing directly is awkward cus this component runs client side only
             apiDescriptionDocument={''}
             basePath={'/api'}
+            router='memory'
         />
     );
 }
 
+const TryItWithProvider = withMosaicProvider(withStyles(TryIt))
 export function PdtfTryIt({ layout = 'sidebar', currentVersion = 'v1' }) {
 
     return  (
-       <TryIt embeddedInMd={true} httpOperation={{
+      // <SSRProvider>p
+      //   <MosaicProvider>
+      <TryItWithProvider embeddedInMd={true} httpOperation={{
            method: "GET",
           servers: ["https://todos.stoplight.io"],
           path: "/todos",
           responses: [{}]
        }}/>
+        // </MosaicProvider>
+      // </SSRProvider>
     );
 }
 
