@@ -51,6 +51,14 @@ export default defineConfig({
       autogenerate: {
         directory: 'reference'
       }
-    }]
+    },
+      {
+        label: 'Api',
+        link: '/api',
+      },
+      {
+        label: 'Schemas',
+        link: '/schemas',
+      }]
   }), react()]
 });

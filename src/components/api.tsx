@@ -5,7 +5,6 @@ import { API } from '@stoplight/elements';
 import {TryIt, withMosaicProvider, withStyles,  withRouter,
   withPersistenceBoundary,
   withQueryClientProvider,} from '@stoplight/elements-core';
-import '@stoplight/elements/styles.min.css';
 import {JsonSchemaViewer} from '@stoplight/json-schema-viewer'
 
 
@@ -14,8 +13,8 @@ export function PdtfApi({ layout = 'sidebar', currentVersion = 'v1' }) {
         <API
             apiDescriptionUrl="/pdtf-api-1.2.0.yaml" //this works because this file is is in our public dir. importing directly is awkward cus this component runs client side only
             apiDescriptionDocument={''}
-            basePath={'/api'}
-            router='memory'
+            router='hash'
+            className={'not-content'}
         />
     );
 }
@@ -30,6 +29,7 @@ export function PdtfTryIt({ layout = 'sidebar', currentVersion = 'v1' }) {
            method: "GET",
           servers: ["https://todos.stoplight.io"],
           path: "/todos",
+
           responses: [{}]
        }}/>
         // </MosaicProvider>

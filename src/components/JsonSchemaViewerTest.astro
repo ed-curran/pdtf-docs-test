@@ -1,0 +1,17 @@
+---
+import {JsonSchemaViewer} from "@stoplight/json-schema-viewer";
+import * as userSchema from "/public/userSchema.json"
+---
+
+<style>
+@import '@stoplight/elements/styles.min.css'
+</style>
+
+<JsonSchemaViewer
+    name="User Schema"
+    schema={userSchema}
+    expanded={false}
+    hideTopBar={false}
+    emptyText="No schema defined"
+    defaultExpandedDepth={0}
+/>
