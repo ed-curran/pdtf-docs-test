@@ -2,9 +2,7 @@ import * as PrismObject from 'prismjs'
 //if you remove this things will break
 globalThis.Prism = PrismObject
 import { API } from '@stoplight/elements';
-import {TryIt, withMosaicProvider, withStyles,  withRouter,
-  withPersistenceBoundary,
-  withQueryClientProvider,} from '@stoplight/elements-core';
+import {TryIt, withMosaicProvider, withStyles} from '@stoplight/elements-core';
 import {JsonSchemaViewer} from '@stoplight/json-schema-viewer'
 
 
