@@ -2,13 +2,20 @@
 import '@stoplight/elements/styles.min.css';
 import {PdtfApi} from "../components/api.tsx";
 import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Header.astro';
+
+console.log(Astro.props)
 ---
 
 <html lang="en">
   <head>
     <title>My Homepage</title>
+
   </head>
   <body style="height: 100vh;">
     <PdtfApi client:only="react"/>
+    <Default {...Astro.props}>
+      <slot />
+    </Default>
   </body>
 </html>

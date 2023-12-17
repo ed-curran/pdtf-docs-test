@@ -33,6 +33,10 @@ export default defineConfig({
     }
   },
   integrations: [starlight({
+    components: {
+      // Override the default `SocialIcons` component.
+      PageFrame: './src/components/CustomPageFrame.astro',
+    },
     title: 'My Docs',
     social: {
       github: 'https://github.com/withastro/starlight'

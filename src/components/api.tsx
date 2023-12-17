@@ -4,8 +4,6 @@ globalThis.Prism = PrismObject
 import { API } from '@stoplight/elements';
 import {TryIt, withMosaicProvider, withStyles} from '@stoplight/elements-core';
 import {JsonSchemaViewer} from '@stoplight/json-schema-viewer'
-
-
 export function PdtfApi({ layout = 'sidebar', currentVersion = 'v1' }) {
    return  (
         <API
