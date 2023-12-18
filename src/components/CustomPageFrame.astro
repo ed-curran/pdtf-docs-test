@@ -8,7 +8,9 @@ const isApiPage = Astro.props.slug.startsWith('api');
 ---
 {
   isApiPage ? (
-    <ApiPageFrame {...Astro.props} />
+      <ApiPageFrame {...Astro.props}>
+          <slot name="header" slot="header"/>
+      </ApiPageFrame>
   ) : (
     <Default {...Astro.props}>
         <slot name="header" slot="header"/>

@@ -1,30 +1,26 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
-import DefaultHeader from '@astrojs/starlight/components/Header.astro'
-
+import loader from "../assets/loader.svg?raw";
 import '../stoplight-styles-for-starlight.css';
-import {PdtfApi} from "../components/api.tsx";
+import {PdtfApi} from "./api.tsx";
 ---
 
-<div class="page sl-flex">
-    <header class="header"> <DefaultHeader {...Astro.props}/> </header>
-    <div class="api-frame stoplight-content sl-flex-1">
+<div class="page flex h-screen">
+    <header class="header flex-0"> <slot name="header" slot="header"/></header>
+
+    <div class={`mt-12 md:mt-16 pt-14 lg:overflow-hidden stoplight-content flex-1 px-4 lg:px-0 lg:py-0`}>
+        <div class='spinner animate-spin w-[24px] h-[24px] mx-auto mt-64'>
+            <Fragment set:html={loader} class="test"/>
+        </div>
         <PdtfApi client:only="react"/>
     </div>
 </div>
 
 
 <style>
-    .api-frame {
-        padding-top: 4rem;
-        flex: 1 0 0;
-        overflow: hidden;
-    }
-	.page {
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
+  .sl-elements-api {
+    background-color: black;
+  }
 	.header {
 		z-index: var(--sl-z-index-navbar);
 		position: fixed;
@@ -42,51 +38,10 @@ import {PdtfApi} from "../components/api.tsx";
 		padding-inline-end: calc(var(--sl-nav-gap) + var(--sl-nav-pad-x) + var(--sl-menu-button-size));
 	}
 
-	.sidebar-pane {
-		visibility: var(--sl-sidebar-visibility, hidden);
-		position: fixed;
-		z-index: var(--sl-z-index-menu);
-		inset-block: 0;
-		inset-inline-start: 0;
-		padding-top: var(--sl-nav-height);
-		width: 100%;
-		background-color: var(--sl-color-black);
-		overflow-y: auto;
-	}
-
-	:global([aria-expanded='true']) ~ .sidebar-pane {
-		--sl-sidebar-visibility: visible;
-	}
-
-	.sidebar-content {
-		height: 100%;
-		min-height: max-content;
-		padding: 1rem var(--sl-sidebar-pad-x) 0;
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	@media (min-width: 50rem) {
-		.sidebar-content::after {
-			content: '';
-			padding-bottom: 1px;
-		}
-	}
-
-	.main-frame {
-		padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height));
-		padding-inline-start: var(--sl-content-inline-start);
-	}
 
 	@media (min-width: 50rem) {
 		:global([data-has-sidebar]) .header {
 			padding-inline-end: var(--sl-nav-pad-x);
-		}
-		.sidebar-pane {
-			--sl-sidebar-visibility: visible;
-			width: var(--sl-sidebar-width);
-			background-color: var(--sl-color-bg-sidebar);
-			border-inline-end: 1px solid var(--sl-color-hairline-shade);
 		}
 	}
 </style>
