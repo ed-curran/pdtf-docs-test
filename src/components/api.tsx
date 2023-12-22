@@ -5,7 +5,7 @@ import { API } from '@stoplight/elements';
 import {TryIt, withMosaicProvider, withStyles} from '@stoplight/elements-core';
 import {JsonSchemaViewer} from '@stoplight/json-schema-viewer'
 import useBreakpoint from '../lib/useBreakpoints.ts'
-export function PdtfApi({ layout = 'sidebar', currentVersion = 'v1' }) {
+export function PdtfApi({ layout = 'sidebar', currentVersion = 'v1', apiDescriptionUrl = "/api/pdtf-api-1.2.0.yaml" }) {
   const size = useBreakpoint();
   //hacks to hide spinner once loaded
   //astro doesn't seem to have a nicer way to display a spinner / do suspense stuff
@@ -14,8 +14,7 @@ export function PdtfApi({ layout = 'sidebar', currentVersion = 'v1' }) {
 
    return  (
         <API
-            apiDescriptionUrl="/pdtf-api-1.2.0.yaml" //this works because this file is is in our public dir. importing directly is awkward cus this component runs client side only
-            apiDescriptionDocument={''}
+            apiDescriptionUrl={apiDescriptionUrl}//this works because this file is is in our public dir. importing directly is awkward cus this component runs client side only
             router='hash'
             layout={size === 'sm' ? 'stacked' : 'sidebar'}
             className='not-content'

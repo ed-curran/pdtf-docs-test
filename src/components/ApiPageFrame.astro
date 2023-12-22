@@ -3,6 +3,8 @@ import type { Props } from '@astrojs/starlight/props';
 import loader from "../assets/loader.svg?raw";
 import '../stoplight-styles-for-starlight.css';
 import {PdtfApi} from "./api.tsx";
+
+const selectedTab = Astro.props.slug.startsWith('api') ? 'api' : Astro.props.slug.startsWith('guides') ? 'guides' : Astro.props.slug.startsWith('schemas') ? 'schemas' : 'unknown';
 ---
 
 <div class="page flex h-screen">
@@ -12,7 +14,12 @@ import {PdtfApi} from "./api.tsx";
         <div class='spinner animate-spin w-[24px] h-[24px] mx-auto mt-64'>
             <Fragment set:html={loader} class="test"/>
         </div>
-        <PdtfApi client:only="react"/>
+        {
+            selectedTab === 'api' ? (<PdtfApi client:only="react" apiDescriptionUrl="/api/pdtf-api-1.2.0.yaml"/>) : null
+        }
+        {
+            selectedTab === 'schemas' ? <PdtfApi client:only="react" apiDescriptionUrl="/schemas.yaml"/> : null
+        }
     </div>
 </div>
 
